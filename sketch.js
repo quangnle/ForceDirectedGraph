@@ -21,6 +21,8 @@ var _mat = [
 [0,0,0,1,0,0,0,0,0,0,1,0]
 ];
 
+const maxIterations = 10;
+
 function setup(){
 	createCanvas(640, 480);
 	initGraph(_mat, 640, 480);
@@ -41,5 +43,7 @@ function draw(){
 		ellipse(_nodeSet[i].x, _nodeSet[i].y, 10, 10);
 	}
 	
-	updatePos(_nodeSet);
+	for (let i = 0; i < maxIterations; i++){
+		updatePos(_nodeSet);
+	}
 }
